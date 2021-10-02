@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <iostream> 
+
+// The goal here to reverse this DNA sequence. 
+
+// intruducing the function to the computer
+void reverse(char sequence[]);
+
+
+int main() 
+{
+     // these are the gene pairs we have called 
+     // T = thymine;
+     // G = guanine; 
+     // A = adenine; 
+     // C = cytosine; 
+     char sequence[40] = {'T','G','A','G','A','C','T','T','C','A','G','G','C','T','C','C','T','G','G','G','C','A','A','C','G','T','G','C','T','G','G','T','C','T','G','T','G','T','G'};
+
+     std::cout << "DNA sequence:" << std::endl << sequence << std::endl; 
+
+     // here is the fucntion being called to reverse the whole thing.
+     reverse(sequence);
+
+     std::cout << "Reverse Compliment: " << std::endl << sequence << std::endl;  
+
+     system("pause"); 
+
+}
+
+// here are the workings of the function reverse
+void reverse(char sequence[])
+{
+     char c; 
+     char *p; 
+     char *q; 
+
+    *p = c; 
+
+     if (!p)
+     return; 
+
+
+     // let's define q to the computer
+
+     q = p + 1; 
+     // in simple words: q is equal to sequence + 1; an increment thing
+
+     if (*q =='\0')
+     return;
+    // if you find any 0or null go to the beggining
+
+
+    c = *q; 
+    reverse(q); 
+
+    switch(c)
+    {
+       case'A': 
+       *p = 'T'; 
+        break; 
+
+        case 'G':
+        *p = 'C'; 
+        break; 
+
+        case 'C': 
+        *p = 'G'; 
+        break; 
+
+        case 'T':
+        *p = 'A'; 
+        break; 
+
+
+    }
+
+  // while loop that will reverse the whole sequence
+    while (*q !='\0')
+    {
+      *p = *q; 
+      p++; 
+      q++; 
+    }
+     
+     *p = c;
+
+     return; 
+}
